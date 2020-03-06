@@ -11,15 +11,15 @@ import tensorflow as tf
 
 class Cutout:
     """Progressive Sprinkles Agumentation.
-    
+
     Args:
         num_holes: number of holes to make in an image
         side_length: lenght of sides each hole will have.
-        
+
     Returns:
         Image with number of holes of specified size cut out.
     """
-    
+
     def __init__(self, num_holes, side_length):
         self.n = num_holes
         self.length = side_length
