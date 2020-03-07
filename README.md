@@ -5,7 +5,7 @@ Based on Less Wright's Medium article, [Progessive Sprinkles: a New Data Augment
 
 To install:
 
-    pip intall tf_sprinkles
+    pip install tf_sprinkles
 
 To use:
 
