@@ -16,18 +16,26 @@ class Sprinkles:
         num_holes: number of holes to make in an image
         side_length: lenght of sides each hole will have.
 
+    Keyword Args:
+        gaussian: if True, fills sprinkles with Gaussian noise. Default is
+            False.
+
     Returns:
         Image with number of holes of specified size cut out.
     """
 
-    def __init__(self, num_holes, side_length):
+    def __init__(self, num_holes, side_length, gaussian=False):
         self.n = num_holes
         self.length = side_length
+        self.gaussian = gaussian
 
     def __call__(self, image):
         tf.cast(image, tf.float32)
-        zeros = tf.zeros_like(image)
         img_shape = tf.shape(image)
+        if self.gaussian:
+            rejected = tf.random.normal(img_shape, dtype=tf.float32)
+        else:
+            rejected = tf.zeros_like(image)
         rows = img_shape[0]
         cols = img_shape[1]
         num_channels = img_shape[-1]
@@ -50,5 +58,5 @@ class Sprinkles:
         mask = mask[..., tf.newaxis]
         mask = tf.tile(mask, [1, 1, num_channels])
 
-        filtered_image = tf.where(mask, zeros, image)
+        filtered_image = tf.where(mask, rejected, image)
         return filtered_image
