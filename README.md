@@ -10,24 +10,28 @@ To install:
 
 To use:
 
-    from tf_sprinkles import Sprinkles
-    sprinkles = Sprinkles(num_holes, side_length)
+```python
+from tf_sprinkles import Sprinkles
+sprinkles = Sprinkles(num_holes, side_length)
+```
   
 Then call `sprinkles(image)` in the input pipeline for your image. A simple
 example to get started using the `cat.jpeg` image located in the data folder
 is:
 
-    import numpy as np
-    import tensorflow as tf
-    from tf_sprinkles import Sprinkles
-    from PIL import Image
-    from matplotlib import pyplot as plt
+```python
+import numpy as np
+import tensorflow as tf
+from tf_sprinkles import Sprinkles
+from PIL import Image
+from matplotlib import pyplot as plt
 
-    sprinkles = Sprinkles(num_holes=100, side_length=10)
-    img = Image.open('data/cat.jpeg')
-    img = np.asarray(img) / 255.
-    result = sprinkles(tf.constant(img, dtype=tf.float32))
-    plt.imshow(result.numpy())
+sprinkles = Sprinkles(num_holes=100, side_length=10)
+img = Image.open('data/cat.jpeg')
+img = np.asarray(img) / 255.
+result = sprinkles(tf.constant(img, dtype=tf.float32))
+plt.imshow(result.numpy())
+```
 
 Which results in the following image with sprinkles.
 
