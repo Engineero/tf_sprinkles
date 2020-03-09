@@ -36,7 +36,7 @@ class TestSprinkles(unittest.TestCase):
 
     def test_call(self):
         sprinkles = Sprinkles(self.n, self.length)
-        img = Image.open('../data/cat.jpeg')
+        img = Image.open('data/cat.jpeg')
         img = np.asarray(img) / 255.
         result = sprinkles(tf.constant(img, dtype=tf.float32))
         result = result.numpy()
