@@ -9,6 +9,7 @@
 #
 #*******************************************************************************
 import unittest
+import os
 import numpy as np
 import tensorflow as tf
 from PIL import Image
@@ -35,8 +36,9 @@ class TestSprinkles(unittest.TestCase):
         )
 
     def test_call(self):
+        dir_path = os.path.dirname(os.path.realpath(__file__))
         sprinkles = Sprinkles(self.n, self.length)
-        img = Image.open('data/cat.jpeg')
+        img = Image.open(os.path.join(dir_path, 'data', 'cat.jpeg'))
         img = np.asarray(img) / 255.
         result = sprinkles(tf.constant(img, dtype=tf.float32))
         result = result.numpy()
