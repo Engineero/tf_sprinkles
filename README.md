@@ -1,5 +1,5 @@
-# tf_sprinkles
-Sprinkles augmentation implemented in TensorFlow
+# TF Sprinkles
+Sprinkles augmentation implemented in TensorFlow.
 
 Based on Less Wright's Medium article, [Progessive Sprinkles: a New Data
 Augmentation for CNNs][0]. See also his [post on fast.ai][1].
