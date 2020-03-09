@@ -1,6 +1,22 @@
 # TF Sprinkles
 Sprinkles augmentation implemented in TensorFlow.
 
+Branch | Build status | Coverage status | PyPI version
+--- | --- | --- | ---
+`master` | [![Build Status][3]][4] | [![Coverage Status][5]][6] | [![PyPI version][7]][8]
+`develop` | [![Build Status][9]][10] | [![Coverage Status][11]][12] |
+
+[3]: https://travis-ci.com/Engineero/tf_sprinkles.svg?branch=master
+[4]: https://travis-ci.com/Engineero/tf_sprinkles
+[5]: https://coveralls.io/repos/github/Engineero/tf_sprinkles/badge.svg?branch=master
+[6]: https://coveralls.io/github/Engineero/tf_sprinkles?branch=master
+[7]: https://badge.fury.io/py/tf-sprinkles.svg
+[8]: https://badge.fury.io/py/tf-sprinkles
+[9]: https://travis-ci.com/Engineero/tf_sprinkles.svg?branch=develop
+[10]: https://travis-ci.com/Engineero/tf_sprinkles
+[11]: https://coveralls.io/repos/github/Engineero/tf_sprinkles/badge.svg?branch=develop
+[12]: https://coveralls.io/github/Engineero/tf_sprinkles?branch=develop
+
 Based on Less Wright's Medium article, [Progessive Sprinkles: a New Data
 Augmentation for CNNs][0]. See also his [post on fast.ai][1].
 
