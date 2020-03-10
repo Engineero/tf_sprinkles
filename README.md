@@ -43,7 +43,7 @@ from PIL import Image
 from matplotlib import pyplot as plt
 
 sprinkles = Sprinkles(num_holes=100, side_length=10)
-img = Image.open('data/cat.jpeg')
+img = Image.open('test/data/cat.jpeg')
 img = np.asarray(img) / 255.
 result = sprinkles(tf.constant(img, dtype=tf.float32))
 plt.imshow(result.numpy())
