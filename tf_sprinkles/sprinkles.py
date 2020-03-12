@@ -35,6 +35,17 @@ class Sprinkles:
         self.mode = mode
 
     def __call__(self, image):
+        """Apply sprinkles to an image.
+
+        Args:
+            image: image (preferably tf.float32) to be sprinkled.
+
+        Returns:
+            Image with sprinkles applied.
+
+        Raises:
+            ValueError: if `mode` is not one of the allowed modes or None.
+        """
         tf.cast(image, tf.float32)
         img_shape = tf.shape(image)
         if self.mode is None:
@@ -60,6 +71,7 @@ class Sprinkles:
         return filtered_image
 
     def _make_mask(self, rows, cols, num_channels):
+        """Builds the mask for all sprinkles."""
         row_range = tf.tile(tf.range(rows)[..., tf.newaxis], [1, self.n])
         col_range = tf.tile(tf.range(cols)[..., tf.newaxis], [1, self.n])
         r_idx = tf.random.uniform([self.n], minval=0, maxval=rows-1,
@@ -79,3 +91,4 @@ class Sprinkles:
         mask = mask[..., tf.newaxis]
         mask = tf.tile(mask, [1, 1, num_channels])
         return mask
+
