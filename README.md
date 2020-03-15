@@ -1,5 +1,5 @@
 # TF Sprinkles
-Sprinkles augmentation implemented in TensorFlow.
+Fast and efficient sprinkles augmentation implemented in TensorFlow.
 
 Branch | Build status | Coverage status | PyPI version
 --- | --- | --- | ---
